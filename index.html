@@ -19,13 +19,6 @@
 		<option value="i">i</option>
 		<option value="g">g</option>
 		<option value="m">m</option>
-		<option value="X">X</option>
-		<option value="x">x</option>
-		<option value="s">s</option>
-		<option value="U">U</option>
-		<option value="u">u</option>
-		<option value="A">A</option>
-		<option value="J">J</option>	
 	</select></br>
 
 	<p class="inline-block" style="width:10%">String to check</p>
@@ -35,8 +28,8 @@
 	<h1 id="result"></h1>
 	<h4 id="parsed-container" class="center"></h4>
 	
-	<a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions" class="center">Mozilla RegExp Reference</a>
-	<a href="https://regex101.com/" class="center">Online RegExp Debuger</a>
+	<a target="_blank" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions" class="center">Mozilla RegExp Reference</a>
+	<a target="_blank" href="https://regex101.com/" class="center">Online RegExp Debuger</a>
 
 	<script type="text/javascript">
 		function Submission(){
@@ -56,9 +49,8 @@
 			}
 		}
 		function Evaluate(re, flag, string) {
-			alert(re);
-			var regex = new RegExp (re, String(flag));
-
+			var regex = new RegExp (String(re), String(flag));
+			// console.log(regex);
 			var container = document.getElementById("parsed-container");
 			var parsed = document.getElementById("parsed");
 			container.innerHTML = "RegExp parsed as: &nbsp;&nbsp;" + String(regex);
