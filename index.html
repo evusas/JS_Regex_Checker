@@ -5,7 +5,7 @@
 <html>
 <head>
 	<title>JS RegExp Evaluator</title>
-	<style type="text/css" link="stylesheet.css"></style>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
 </head>
 
 <body>
@@ -56,7 +56,8 @@
 			}
 		}
 		function Evaluate(re, flag, string) {
-			var regex = new RegExp (String(re), String(flag));
+			alert(re);
+			var regex = new RegExp (re, String(flag));
 
 			var container = document.getElementById("parsed-container");
 			var parsed = document.getElementById("parsed");
