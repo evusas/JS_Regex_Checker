@@ -1,34 +1,18 @@
 <!-- Author:  			Evaldas Snukiskis -->
 <!-- Github:  			https://github.com/evusas/JS_Regex_Checker -->
 <!-- Personal webpage:  http://snukiskis.com/ -->
-
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src="main.js"></script>	
-	<style>
-		.center{
-			width:100%;
-			text-align: center;
-			display: block;
-		}
-		.inline-block {
-			display: inline-block;
-		}
-		.true {
-			background-color:green;
-		}
-		.false {
-			background-color:red;
-		}
-	</style>
+	<title>JS RegExp Evaluator</title>
+	<style type="text/css" link="stylesheet.css"></style>
 </head>
 
 <body>
 	<h1 class="center">JavaScript Regular Expressions test() method debugger</h1>
 
 	<p class="inline-block" style="width:10%">Regular Expression</p>
-	<input name="regexp" class="inline-block" id="regexp" style="width:25%;"></br>
+	<input name="regexp" class="inline-block" id="regexp" style="width:40%;"></br>
 	
 	<p class="inline-block" style="width:10%">Evaluation Flag</p>
 	<select class="inline-block" id="flag">
@@ -45,31 +29,30 @@
 	</select></br>
 
 	<p class="inline-block" style="width:10%">String to check</p>
-	<input name="string" id="string" style="width:25%;"></br>
-	<button onclick="Submition()">Submit</button></br></br>
+	<input name="string" id="string" style="width:40%;"></br>
+	<button onclick="Submission()" class="center" style="width:55%;margin:auto;">Submit</button></br></br>
 
-	<h1 id="result" class="center"></h1>
-	
-	<h4 id="parsed-container"></h4>
+	<h1 id="result"></h1>
+	<h4 id="parsed-container" class="center"></h4>
 	
 	<a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions" class="center">Mozilla RegExp Reference</a>
 	<a href="https://regex101.com/" class="center">Online RegExp Debuger</a>
 
 	<script type="text/javascript">
-		function Submition(){
+		function Submission(){
 			var regex = document.getElementById("regexp").value;
 			var flag = document.getElementById("flag").value;
 			var string = document.getElementById("string").value;
 			if(regex == undefined || flag == undefined || string == undefined || regex == "") {
 				var element = document.getElementById("result");
 				element.innerHTML = "Please check your input ";
-				element.className = "center false";
+				element.className = "false center";
 			} 
 			else {
 				var bool = Evaluate(regex,flag,string);
 				var result = document.getElementById("result");
 				result.innerHTML = bool;
-				result.className = String(bool);
+				result.className = String(bool) + " center";
 			}
 		}
 		function Evaluate(re, flag, string) {
@@ -82,7 +65,5 @@
 			return regex.test(string);
 		}
 	</script>
-
 </body>	
-
 </html>

@@ -1,0 +1,17 @@
+.center{
+	/*width:100%;*/
+	text-align: center;
+	display: block;
+}
+.inline-block {
+	display: inline-block;
+}
+.true {
+	background-color:green;
+}
+.false {
+	background-color:red;
+}
+p {
+	margin-left: 25%;
+}
